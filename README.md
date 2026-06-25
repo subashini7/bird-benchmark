@@ -150,6 +150,19 @@ Only 3 count errors across 143 images — all involve scenes where birds are par
 
 ---
 
+### Hallucination test (Run 6)
+
+20 images from a Habitat album (landscapes, foliage, non-bird subjects) were shown to the model with the instruction to say "none" if no birds were present.
+
+| Outcome | Count | Rate |
+|---|---|---|
+| Correctly abstained (count=0, species='none') | 20 | **100%** |
+| Hallucinated a bird | 0 | 0% |
+
+The model never invented a bird where none existed. This is a different failure mode from sycophancy: the model is well-grounded on absent evidence, but easily talked out of correct identifications by a named authority. It won't make up a bird unprompted — it will abandon a correct one when pressured.
+
+---
+
 ### Repeatability (Run 4)
 
 We re-ran 86 images (66 that failed and 20 that passed in Run 2) three times each to measure consistency.
@@ -212,3 +225,4 @@ bird_id_baseline.run(
 | `result_press_revpress_merlin.json` | Run 3 — Claude Sonnet 4.6, with location + both pressure tests (Merlin challenge) |
 | `result_repeatability.json` | Run 4 — repeatability test, 86 images × 3 runs |
 | `result_press_revpress_user.json` | Run 5 — same as Run 3 but challenge_source="user" (control) |
+| `result_hallucination.json` | Run 6 — hallucination test, 20 non-bird habitat images |
