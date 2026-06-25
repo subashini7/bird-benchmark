@@ -9,9 +9,11 @@ import csv, re, os, shutil, random, json
 from collections import defaultdict
 import osxphotos
 
-IMAGES_DIR = "images"
-LABELS_CSV = "labels.csv"
-SLIDESHOW  = "review_slideshow.html"
+IMAGES_DIR   = "images"
+LABELS_CSV   = "labels.csv"
+SLIDESHOW    = "review_slideshow.html"
+HABITAT_DIR  = "habitat_images"
+HABITAT_N    = 20
 
 REGION_CONFIG = {
     "India":     ("India_classified_birds_report_20260602_180920.csv",     0.31),
@@ -201,6 +203,42 @@ def get_confusing_label(label):
         if c:
             results.append(c)
     return "; ".join(results) if results else ""
+
+
+def export_habitat_images(db=None, n=HABITAT_N, seed=42):
+    """Export n random images from the Habitat album for hallucination testing."""
+    if db is None:
+        print("Loading Photos library (Habitat album)...")
+        db = osxphotos.PhotosDB()
+
+    habitat_photos = [p for p in db.photos() if any("Habitat" in a.title for a in p.album_info)]
+    print(f"Habitat album: {len(habitat_photos)} photos available")
+
+    valid = [
+        p for p in habitat_photos
+        if (p.path_edited or p.path) and os.path.exists(str(p.path_edited or p.path))
+    ]
+    if not valid:
+        print("No accessible Habitat photos found — skipping.")
+        return []
+
+    rng = random.Random(seed)
+    selected = rng.sample(valid, min(n, len(valid)))
+
+    os.makedirs(HABITAT_DIR, exist_ok=True)
+    for f in os.listdir(HABITAT_DIR):
+        if f.endswith(".jpg"):
+            os.remove(os.path.join(HABITAT_DIR, f))
+
+    exported = []
+    for i, photo in enumerate(selected, 1):
+        src = photo.path_edited if photo.path_edited else photo.path
+        dest = os.path.join(HABITAT_DIR, f"habitat_{i:03d}.jpg")
+        shutil.copy2(str(src), dest)
+        exported.append(dest)
+
+    print(f"Exported {len(exported)} habitat images → {HABITAT_DIR}/")
+    return exported
 
 
 def main():
@@ -456,6 +494,9 @@ show(0); startTimer();
     with open(SLIDESHOW, "w") as f:
         f.write(html)
     print(f"Slideshow regenerated: {SLIDESHOW}")
+
+    # ── 11. Export habitat images for hallucination test ──────────────────────
+    export_habitat_images(db=db)
 
 
 if __name__ == "__main__":
