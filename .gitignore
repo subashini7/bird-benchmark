@@ -1,7 +1,7 @@
-images/
-habitat_images/
-habitat_public_review/
+.DS_Store
+__pycache__/
+*.pyc
+*.pyo
+.env
 results/
-results_v10/
-*.html
-*.json
+*.run.json
