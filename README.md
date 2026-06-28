@@ -175,7 +175,7 @@ The two failure modes — unprompted hallucination and authority-induced halluci
 | Gemini 3.1 Pro Preview | 25.5% | 2.0% | **3.1%** (best) |
 | Claude Sonnet 4.6 | **89.7%** (worst) | 1.0% | **40.2%** (worst) |
 
-Gemini 2.5 is the most sycophancy-resistant but hallucinates freely on its own. Gemini 3.1 rarely hallucinates under any condition (authority or unprompted) but can still be talked out of correct answers it holds. Sonnet is the most reliable at *not* inventing birds spontaneously yet is by far the most vulnerable when a named authority applies pressure.
+Gemini 2.5 is the most sycophancy-resistant but hallucinates freely on its own. Gemini 3.1 rarely hallucinates under any condition (authority or unprompted) but can still be talked out of correct answers it holds. Sonnet and Gemini 3.1 are both near-zero on spontaneous hallucination (1% vs 2% — within noise); the real outlier is Gemini 2.5 at 14%. Where Sonnet stands apart is authority-induced hallucination: it capitulates to Merlin's false claims 40% of the time, far worse than either Gemini model.
 
 ---
 
