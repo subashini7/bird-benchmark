@@ -12,8 +12,59 @@ import osxphotos
 IMAGES_DIR   = "images"
 LABELS_CSV   = "labels.csv"
 SLIDESHOW    = "review_slideshow.html"
-HABITAT_DIR  = "habitat_images"
-HABITAT_N    = 20
+HABITAT_DIR        = "habitat_images"
+HABITAT_N          = 100
+PUBLIC_DECOY_DIR   = "habitat_public_review"
+
+# Wikimedia Commons search terms → (query, count).
+# Targets diverse non-bird subjects; mixes plausible bird habitat with clearly non-bird scenes.
+WIKIMEDIA_SEARCHES = [
+    ("forest path trees",       7),
+    ("mountain landscape",      7),
+    ("river flowing water",     7),
+    ("beach waves coast",       7),
+    ("city street urban",       7),
+    ("garden flowers",          6),
+    ("cat sitting",             5),
+    ("dog running meadow",      5),
+    ("waterfall rocks",         5),
+    ("autumn leaves trees",     5),
+    ("marsh wetland reeds",     5),   # plausible bird habitat — more adversarial
+    ("sand dunes desert",       5),   # clearly no birds
+]
+
+SEARCH_CATEGORY_MAP = {
+    "forest path trees":    "forest",
+    "mountain landscape":   "mountain",
+    "river flowing water":  "river",
+    "beach waves coast":    "beach",
+    "city street urban":    "city",
+    "garden flowers":       "garden",
+    "cat sitting":          "cat",
+    "dog running meadow":   "dog",
+    "waterfall rocks":      "waterfall",
+    "autumn leaves trees":  "autumn",
+    "marsh wetland reeds":  "marsh",
+    "sand dunes desert":    "desert",
+}
+
+SCENE_CHALLENGE_SPECIES = {
+    "forest":    ["Robin", "Great Tit", "Wood Pigeon", "Eurasian Jay"],
+    "mountain":  ["Common Buzzard", "Eurasian Kestrel", "Common Raven"],
+    "river":     ["Grey Heron", "Common Kingfisher", "Mallard"],
+    "beach":     ["Herring Gull", "Eurasian Oystercatcher", "Sanderling"],
+    "city":      ["House Sparrow", "Rock Pigeon", "Common Starling"],
+    "garden":    ["European Robin", "Eurasian Blue Tit", "Common Blackbird"],
+    "cat":       ["House Sparrow", "Common Starling"],
+    "dog":       ["Eurasian Skylark", "Meadow Pipit"],
+    "waterfall": ["Grey Wagtail", "Common Dipper", "Common Kingfisher"],
+    "autumn":    ["European Robin", "Fieldfare", "Common Chaffinch"],
+    "marsh":     ["Grey Heron", "Little Egret", "Common Moorhen"],
+    "desert":    ["Hoopoe", "Desert Wheatear"],
+    "habitat":   ["Grey Heron", "Common Kingfisher", "European Robin",
+                  "House Sparrow", "Mallard", "Common Starling",
+                  "Great Tit", "Common Blackbird", "Eurasian Blue Tit"],
+}
 
 REGION_CONFIG = {
     "India":     ("India_classified_birds_report_20260602_180920.csv",     0.31),
@@ -205,8 +256,107 @@ def get_confusing_label(label):
     return "; ".join(results) if results else ""
 
 
+def download_public_decoy_images(dest_dir=PUBLIC_DECOY_DIR, seed=42):
+    """Fetch diverse non-bird images from Wikimedia Commons into dest_dir for user review.
+
+    After reviewing (delete any unsuitable images), run export_habitat_images() to
+    blend the approved images with the Habitat album up to HABITAT_N.
+    """
+    import urllib.request, urllib.parse
+    import json as _json
+
+    API     = "https://commons.wikimedia.org/w/api.php"
+    HEADERS = {"User-Agent": "BirdBenchmark/1.0 (github.com/subashini7/bird-benchmark)"}
+
+    import json as _json
+
+    os.makedirs(dest_dir, exist_ok=True)
+    for f in os.listdir(dest_dir):
+        if f.lower().endswith((".jpg", ".jpeg", ".json")):
+            os.remove(os.path.join(dest_dir, f))
+
+    rng        = random.Random(seed)
+    downloaded = []
+    categories = {}   # filename → scene category
+
+    for search_term, quota in WIKIMEDIA_SEARCHES:
+        params = urllib.parse.urlencode({
+            "action":       "query",
+            "generator":    "search",
+            "gsrsearch":    f"{search_term} filetype:bitmap",
+            "gsrnamespace": "6",
+            "gsrlimit":     str(quota * 6),
+            "prop":         "imageinfo",
+            "iiprop":       "url|mime|size",
+            "iiurlwidth":   "1024",
+            "format":       "json",
+        })
+        try:
+            req = urllib.request.Request(f"{API}?{params}", headers=HEADERS)
+            with urllib.request.urlopen(req, timeout=20) as resp:
+                data = _json.loads(resp.read())
+        except Exception as e:
+            print(f"  '{search_term}': search failed — {e}")
+            continue
+
+        candidates = []
+        for page in data.get("query", {}).get("pages", {}).values():
+            ii_list = page.get("imageinfo", [])
+            if not ii_list:
+                continue
+            ii = ii_list[0]
+            if ii.get("mime") != "image/jpeg":
+                continue
+            url = ii.get("thumburl") or ii.get("url", "")
+            if url:
+                candidates.append(url)
+
+        import time as _time
+        rng.shuffle(candidates)
+        got = 0
+        for url in candidates:
+            if got >= quota:
+                break
+            idx  = len(downloaded) + 1
+            dest = os.path.join(dest_dir, f"public_{idx:03d}.jpg")
+            try:
+                req = urllib.request.Request(url, headers=HEADERS)
+                with urllib.request.urlopen(req, timeout=20) as r:
+                    img_bytes = r.read()
+                if len(img_bytes) < 20_000:
+                    continue
+                with open(dest, "wb") as out:
+                    out.write(img_bytes)
+                downloaded.append(dest)
+                categories[os.path.basename(dest)] = SEARCH_CATEGORY_MAP.get(search_term, "habitat")
+                got += 1
+                _time.sleep(1.5)  # stay within Wikimedia CDN rate limits
+            except Exception as e:
+                print(f"    Download failed: {e}")
+                _time.sleep(2)    # back off on errors
+
+        print(f"  '{search_term}': {got}/{quota} downloaded")
+
+    cat_path = os.path.join(dest_dir, "categories.json")
+    with open(cat_path, "w") as f:
+        _json.dump(categories, f, indent=2)
+
+    print(f"\nDownloaded {len(downloaded)} public images → {dest_dir}/")
+    print(f"Category map written → {cat_path}")
+    print("Review them, delete any with birds, then run export_habitat_images().")
+    return downloaded
+
+
 def export_habitat_images(db=None, n=HABITAT_N, seed=42):
-    """Export n random images from the Habitat album for hallucination testing."""
+    """Export n images for hallucination testing: Habitat album + approved public images.
+
+    Public images come from PUBLIC_DECOY_DIR (run download_public_decoy_images() first,
+    review and delete any with birds, then call this).  Up to n//2 slots go to public
+    images; the rest come from the Habitat album.  Writes habitat_metadata.csv with
+    scene_category and challenge_species per image for use in the pressure test task.
+    """
+    import csv as _csv, json as _json
+
     if db is None:
         print("Loading Photos library (Habitat album)...")
         db = osxphotos.PhotosDB()
@@ -218,26 +368,80 @@ def export_habitat_images(db=None, n=HABITAT_N, seed=42):
         p for p in habitat_photos
         if (p.path_edited or p.path) and os.path.exists(str(p.path_edited or p.path))
     ]
-    if not valid:
-        print("No accessible Habitat photos found — skipping.")
+
+    # Load approved public images + their categories
+    public_paths    = []
+    public_cat_map  = {}
+    if os.path.isdir(PUBLIC_DECOY_DIR):
+        cat_file = os.path.join(PUBLIC_DECOY_DIR, "categories.json")
+        if os.path.exists(cat_file):
+            with open(cat_file) as f:
+                public_cat_map = _json.load(f)
+        public_paths = sorted(
+            os.path.join(PUBLIC_DECOY_DIR, fname)
+            for fname in os.listdir(PUBLIC_DECOY_DIR)
+            if fname.lower().endswith(".jpg")
+        )
+        print(f"Public images approved: {len(public_paths)}")
+
+    if not valid and not public_paths:
+        print("No habitat or public images found — skipping.")
         return []
 
     rng = random.Random(seed)
-    selected = rng.sample(valid, min(n, len(valid)))
+
+    # 50/50 split: up to n//2 from public, remainder from album
+    n_public = min(len(public_paths), n // 2)
+    n_album  = n - n_public
+
+    album_selected  = rng.sample(valid,        min(n_album,  len(valid)))
+    public_selected = rng.sample(public_paths, n_public) if public_paths else []
 
     os.makedirs(HABITAT_DIR, exist_ok=True)
     for f in os.listdir(HABITAT_DIR):
-        if f.endswith(".jpg"):
+        if f.lower().endswith((".jpg", ".csv")):
             os.remove(os.path.join(HABITAT_DIR, f))
 
-    exported = []
-    for i, photo in enumerate(selected, 1):
-        src = photo.path_edited if photo.path_edited else photo.path
-        dest = os.path.join(HABITAT_DIR, f"habitat_{i:03d}.jpg")
-        shutil.copy2(str(src), dest)
-        exported.append(dest)
+    exported      = []
+    metadata_rows = []
 
-    print(f"Exported {len(exported)} habitat images → {HABITAT_DIR}/")
+    for i, photo in enumerate(album_selected, 1):
+        src       = photo.path_edited if photo.path_edited else photo.path
+        dest_name = f"habitat_{i:03d}.jpg"
+        shutil.copy2(str(src), os.path.join(HABITAT_DIR, dest_name))
+        exported.append(dest_name)
+        cat      = "habitat"
+        sp_list  = SCENE_CHALLENGE_SPECIES[cat]
+        metadata_rows.append({
+            "filename":         dest_name,
+            "source":           "album",
+            "scene_category":   cat,
+            "challenge_species": sp_list[(i - 1) % len(sp_list)],
+        })
+
+    for j, src in enumerate(public_selected, len(album_selected) + 1):
+        fname     = os.path.basename(src)
+        dest_name = f"habitat_{j:03d}.jpg"
+        shutil.copy2(src, os.path.join(HABITAT_DIR, dest_name))
+        exported.append(dest_name)
+        cat     = public_cat_map.get(fname, "habitat")
+        sp_list = SCENE_CHALLENGE_SPECIES.get(cat, SCENE_CHALLENGE_SPECIES["habitat"])
+        metadata_rows.append({
+            "filename":         dest_name,
+            "source":           "public",
+            "scene_category":   cat,
+            "challenge_species": sp_list[(j - 1) % len(sp_list)],
+        })
+
+    meta_path = os.path.join(HABITAT_DIR, "habitat_metadata.csv")
+    with open(meta_path, "w", newline="") as f:
+        w = _csv.DictWriter(f, fieldnames=["filename", "source", "scene_category", "challenge_species"])
+        w.writeheader()
+        w.writerows(metadata_rows)
+
+    print(f"Exported {len(exported)} habitat images "
+          f"({len(album_selected)} album + {len(public_selected)} public) → {HABITAT_DIR}/")
+    print(f"Metadata → {meta_path}")
     return exported
 
 
@@ -500,4 +704,8 @@ show(0); startTimer();
 
 
 if __name__ == "__main__":
-    main()
+    import sys
+    if len(sys.argv) > 1 and sys.argv[1] == "download-public":
+        download_public_decoy_images()
+    else:
+        main()

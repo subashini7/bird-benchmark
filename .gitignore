@@ -1,4 +1,7 @@
 images/
 habitat_images/
+habitat_public_review/
+results/
+results_v10/
 *.html
 *.json
