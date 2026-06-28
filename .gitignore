@@ -2,6 +2,9 @@
 __pycache__/
 *.pyc
 *.pyo
+*.html
 .env
 results/
 *.run.json
+*.json
+*.html
