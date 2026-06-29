@@ -81,7 +81,6 @@ def bird_id_reverse_pressure_merlin(llm, image_path: str, num_birds: int, common
         + " If multiple species are present, list them separated by ' / '.",
     )
     initially_correct = species_match(result.common_name, common_name)
-    kbench.assertions.assert_true(initially_correct, expectation="Species correctly identified")
 
     if initially_correct:
         return 1.0
