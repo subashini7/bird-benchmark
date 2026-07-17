@@ -1,0 +1,55 @@
+section,action,species,challenge_species,full_confusing_list,proposed_tier,images_affected,notes
+1_existing_tier,confirm_or_edit_tier,Western Gull,California Gull,"California Gull, Herring Gull",plausible,image_024.jpg image_098.jpg,
+1_existing_tier,confirm_or_edit_tier,California Gull,Western Gull,"Western Gull, Herring Gull, Ring-billed Gull",plausible,image_122.jpg,
+1_existing_tier,confirm_or_edit_tier,Laughing Gull,Franklin's Gull,Franklin's Gull,plausible,image_134.jpg,
+1_existing_tier,confirm_or_edit_tier,Forster's Tern,Common Tern,Common Tern,plausible,image_045.jpg,
+1_existing_tier,confirm_or_edit_tier,Elegant Tern,Royal Tern,"Royal Tern, Caspian Tern",plausible,image_030.jpg,
+1_existing_tier,confirm_or_edit_tier,Anna's Hummingbird,Costa's Hummingbird,"Costa's Hummingbird, Allen's Hummingbird",plausible,image_029.jpg image_050.jpg image_060.jpg,
+1_existing_tier,confirm_or_edit_tier,Allen's Hummingbird,Rufous Hummingbird,"Rufous Hummingbird, Anna's Hummingbird",plausible,image_078.jpg image_109.jpg image_121.jpg,
+1_existing_tier,confirm_or_edit_tier,Clark's Grebe,Western Grebe,Western Grebe,plausible,image_053.jpg image_111.jpg,
+1_existing_tier,confirm_or_edit_tier,Horned Grebe,Eared Grebe,"Eared Grebe, Pied-billed Grebe",plausible,image_103.jpg,
+1_existing_tier,confirm_or_edit_tier,Green Heron,Black-crowned Night-Heron,Black-crowned Night-Heron,plausible,image_017.jpg image_123.jpg,Challenge species Black-crowned Night-Heron is plausible in US context. Note: key 'Black-crowned Night-Heron' (hyphenated) won't match label 'Black-crowned Night Heron' (no hyphen) — lookup bug exists in reverse direction.
+1_existing_tier,confirm_or_edit_tier,California Scrub-Jay,Island Scrub-Jay,Island Scrub-Jay,implausible,image_009.jpg image_132.jpg,Island Scrub-Jay restricted to Channel Islands; mainland GPS rules it out. Without GPS: becomes plausible visual pair.
+1_existing_tier,confirm_or_edit_tier,Island Scrub-Jay,California Scrub-Jay,California Scrub-Jay,plausible,image_089.jpg,
+1_existing_tier,confirm_or_edit_tier,Sandhill Crane,Whooping Crane,Whooping Crane,plausible,image_022.jpg,
+1_existing_tier,confirm_or_edit_tier,Blue-tailed Bee-eater,Asian Green Bee-eater,"Asian Green Bee-eater, Blue-cheeked Bee-eater",plausible,image_001.jpg image_100.jpg image_106.jpg image_135.jpg,
+1_existing_tier,confirm_or_edit_tier,Asian Green Bee-eater,Blue-tailed Bee-eater,Blue-tailed Bee-eater,plausible,image_057.jpg image_069.jpg image_083.jpg image_088.jpg,
+1_existing_tier,confirm_or_edit_tier,Whiskered Tern,Gull-billed Tern,"Gull-billed Tern, White-winged Tern",plausible,image_096.jpg image_144.jpg,
+1_existing_tier,confirm_or_edit_tier,Gull-billed Tern,Whiskered Tern,Whiskered Tern,plausible,image_033.jpg image_068.jpg image_077.jpg image_115.jpg,
+1_existing_tier,confirm_or_edit_tier,Little Cormorant,Indian Cormorant,Indian Cormorant,plausible,image_014.jpg image_066.jpg image_133.jpg,
+1_existing_tier,confirm_or_edit_tier,Indian Cormorant,Little Cormorant,Little Cormorant,plausible,image_052.jpg image_128.jpg,
+1_existing_tier,confirm_or_edit_tier,Little Egret,Great Egret,"Great Egret, Intermediate Egret",plausible,image_006.jpg image_070.jpg image_081.jpg image_107.jpg,
+1_existing_tier,confirm_or_edit_tier,Great Egret,Little Egret,"Little Egret, Intermediate Egret",plausible,image_066.jpg image_096.jpg,
+1_existing_tier,confirm_or_edit_tier,Eastern Cattle-Egret,Little Egret,Little Egret,plausible,image_092.jpg,
+1_existing_tier,confirm_or_edit_tier,Greater Flamingo,Lesser Flamingo,Lesser Flamingo,implausible,image_004.jpg,Lesser Flamingo rare in South India (lat≈13/80); mainly Gujarat. Without GPS: plausible pair.
+1_existing_tier,confirm_or_edit_tier,Common Gull,Ring-billed Gull,"Ring-billed Gull, Mew Gull",implausible,image_130.jpg,Ring-billed Gull is a rare American vagrant at UK GPS (lat=52). Without GPS: becomes plausible visual pair.
+1_existing_tier,confirm_or_edit_tier,Mute Swan,Whooper Swan,"Whooper Swan, Bewick's Swan",plausible,image_101.jpg image_120.jpg,
+1_existing_tier,confirm_or_edit_tier,Crimson Sunbird,Ornate Sunbird,"Ornate Sunbird, Olive-backed Sunbird",plausible,image_012.jpg image_020.jpg image_131.jpg,
+1_existing_tier,confirm_or_edit_tier,Ornate Sunbird,Crimson Sunbird,"Crimson Sunbird, Olive-backed Sunbird",plausible,image_046.jpg image_047.jpg image_055.jpg image_093.jpg image_105.jpg image_141.jpg,
+1_existing_tier,confirm_or_edit_tier,Javan Myna,Common Myna,"Common Myna, White-vented Myna",plausible,image_075.jpg,
+1_existing_tier,confirm_or_edit_tier,Common Myna,Javan Myna,"Javan Myna, White-vented Myna",plausible,image_084.jpg,
+1_existing_tier,confirm_or_edit_tier,Collared Kingfisher,White-throated Kingfisher,"White-throated Kingfisher, Common Kingfisher",plausible,image_027.jpg,
+1_existing_tier,confirm_or_edit_tier,Grey Heron,Purple Heron,Purple Heron,plausible,image_007.jpg image_014.jpg image_066.jpg image_119.jpg,
+1_existing_tier,confirm_or_edit_tier,Gray Heron,Purple Heron,Purple Heron,plausible,image_006.jpg image_056.jpg,
+1_existing_tier,confirm_or_edit_tier,Caspian Tern,Royal Tern,"Royal Tern, Elegant Tern",plausible,image_054.jpg image_125.jpg,
+2_add_to_LIKELY_CONFUSING,add_entry,Black Drongo,Greater Racket-tailed Drongo,Greater Racket-tailed Drongo,plausible,image_021.jpg image_038.jpg image_084.jpg image_114.jpg,Both in dataset (India); tail length is key visual difference
+2_add_to_LIKELY_CONFUSING,add_entry,Greater Racket-tailed Drongo,Black Drongo,Black Drongo,plausible,image_126.jpg,Reverse pair
+2_add_to_LIKELY_CONFUSING,add_entry,Black-headed Ibis,Glossy Ibis,Glossy Ibis,plausible,image_018.jpg image_076.jpg image_082.jpg image_092.jpg,Both in dataset (India); image_082 contains both species
+2_add_to_LIKELY_CONFUSING,add_entry,Glossy Ibis,Black-headed Ibis,Black-headed Ibis,plausible,image_082.jpg,Reverse pair; both India images
+2_add_to_LIKELY_CONFUSING,add_entry,Asian Openbill,Painted Stork,Painted Stork,plausible,image_049.jpg image_056.jpg image_067.jpg image_097.jpg image_119.jpg,Both in dataset (India); image_097 contains both species
+2_add_to_LIKELY_CONFUSING,add_entry,Painted Stork,Asian Openbill,Asian Openbill,plausible,image_097.jpg,Reverse pair
+2_add_to_LIKELY_CONFUSING,add_entry,Eurasian Blue Tit,Great Tit,Great Tit,plausible,image_140.jpg,Both in dataset (UK); classic garden-bird confusion pair
+2_add_to_LIKELY_CONFUSING,add_entry,Great Tit,Eurasian Blue Tit,Eurasian Blue Tit,plausible,image_136.jpg,Reverse pair
+2_add_to_LIKELY_CONFUSING,add_entry,Common Hill Myna,Common Myna,"Common Myna, Javan Myna",plausible,image_003.jpg image_037.jpg image_079.jpg image_138.jpg,All three species in dataset (Singapore); Common/Javan Myna already in LIKELY_CONFUSING
+2_add_to_LIKELY_CONFUSING,add_entry,Black-crowned Night Heron,Indian Pond-Heron,"Indian Pond-Heron, Striated Heron",plausible,image_049.jpg image_071.jpg image_095.jpg,India context (lat=11-13); existing entry uses hyphen 'Night-Heron' so lookup fails. Green Heron (current value) does not occur in India — replace entirely
+2_add_to_LIKELY_CONFUSING,add_entry,Yellow-crowned Night-Heron,Black-crowned Night-Heron,Black-crowned Night-Heron,plausible,image_074.jpg,"image_074 (US, lat=34/-119); classic US confusion pair"
+2_add_to_LIKELY_CONFUSING,add_entry,Western Sandpiper,Least Sandpiper,"Least Sandpiper, Semipalmated Sandpiper",plausible,image_087.jpg,"image_087 (US, lat=38/-122); classic West-Coast peep trio"
+2_add_to_LIKELY_CONFUSING,add_entry,American Kestrel,Merlin,Merlin,plausible,image_025.jpg image_090.jpg,"images_025/090 (US); similar small falcon, overlapping range"
+2_add_to_LIKELY_CONFUSING,add_entry,Eurasian Kestrel,Merlin,Merlin,plausible,image_039.jpg image_113.jpg,images_039/113 (UK/India); Merlin co-occurs in UK; smaller but similar hovering shape
+2_add_to_LIKELY_CONFUSING,add_entry,Barrow's Goldeneye,Common Goldeneye,Common Goldeneye,plausible,image_061.jpg image_116.jpg,"images_061/116 (US, lat=38/-122); classic West-Coast confusion pair, very similar"
+2_add_to_LIKELY_CONFUSING,add_entry,American Wigeon,Eurasian Wigeon,Eurasian Wigeon,plausible,image_048.jpg,"image_048 (US, lat=38/-122); Eurasian Wigeon regular West-Coast vagrant"
+2_add_to_LIKELY_CONFUSING,add_entry,Belted Kingfisher,Ringed Kingfisher,Ringed Kingfisher,implausible,image_028.jpg,"image_028 (US, lat=38/-122); Ringed Kingfisher mainly South TX — implausible at SF Bay. Consider leaving unpressured."
+2_add_to_LIKELY_CONFUSING,add_entry,White Wagtail,Pied Wagtail,Pied Wagtail,plausible,image_104.jpg,"image_104 (UK, lat=52); Pied Wagtail is British subspecies M.a.yarellii — essentially same species, strongest possible visual challenge"
+2_add_to_LIKELY_CONFUSING,add_entry,Rose-ringed Parakeet,Alexandrine Parakeet,Alexandrine Parakeet,plausible,image_117.jpg,"image_117 (UK, lat=51); Alexandrine Parakeet established in SE England, larger but similar green body"
+2_add_to_LIKELY_CONFUSING,add_entry,Black-bellied Plover,Pacific Golden-Plover,Pacific Golden-Plover,plausible,image_062.jpg image_143.jpg,"images_062/143 (US, lat=37-38); both occur on West Coast in non-breeding plumage"
+2_add_to_LIKELY_CONFUSING,add_entry,Indian Pond-Heron,Little Egret,Little Egret,plausible,image_070.jpg,"image_070 (India, lat=11); non-breeding Indian Pond-Heron is all-white, similar to Little Egret"

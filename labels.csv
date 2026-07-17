@@ -1,6 +1,6 @@
 image_id,num_birds,common_name,latitude,longitude,likely_confusing_species
 image_001.jpg,1,Blue-tailed Bee-eater,11,77,"Asian Green Bee-eater, Blue-cheeked Bee-eater"
-image_003.jpg,2,Common Hill Myna,1,104,
+image_003.jpg,2,Common Hill Myna,1,104,"Common Myna, Javan Myna"
 image_004.jpg,2,Black-winged Stilt / Greater Flamingo,13,80,Lesser Flamingo
 image_005.jpg,1,Lineated Barbet,1,104,
 image_006.jpg,2,Gray Heron / Little Egret,11,77,"Purple Heron; Great Egret, Intermediate Egret"
@@ -15,17 +15,17 @@ image_014.jpg,2,Grey Heron / Little Cormorant,11,77,Purple Heron; Indian Cormora
 image_015.jpg,1,Black Kite,11,77,
 image_016.jpg,2,Rock Pigeon,1,104,
 image_017.jpg,1,Green Heron,38,-122,Black-crowned Night-Heron
-image_018.jpg,1,Black-headed Ibis,11,77,
+image_018.jpg,1,Black-headed Ibis,11,77,Glossy Ibis
 image_019.jpg,1,Eurasian Magpie,51,0,
 image_020.jpg,1,Crimson Sunbird,1,104,"Ornate Sunbird, Olive-backed Sunbird"
-image_021.jpg,1,Black Drongo,21,71,
+image_021.jpg,1,Black Drongo,21,71,Greater Racket-tailed Drongo
 image_022.jpg,2,Sandhill Crane,28,-97,Whooping Crane
 image_023.jpg,1,Ashy Woodswallow,13,80,
 image_024.jpg,2,Western Gull,37,-122,"California Gull, Herring Gull"
-image_025.jpg,1,American Kestrel,37,-122,
+image_025.jpg,1,American Kestrel,37,-122,Sharp-shinned Hawk
 image_026.jpg,1,Black Turnstone,38,-122,
 image_027.jpg,2,Collared Kingfisher,1,104,"White-throated Kingfisher, Common Kingfisher"
-image_028.jpg,1,Belted Kingfisher,38,-122,
+image_028.jpg,1,Belted Kingfisher,38,-122,Ringed Kingfisher
 image_029.jpg,1,Anna's Hummingbird,38,-121,"Costa's Hummingbird, Allen's Hummingbird"
 image_030.jpg,2,Elegant Tern,38,-122,"Royal Tern, Caspian Tern"
 image_031.jpg,1,Black-winged Stilt,21,70,
@@ -34,9 +34,9 @@ image_033.jpg,1,Gull-billed Tern,13,80,Whiskered Tern
 image_034.jpg,1,Barn Swallow,37,-122,
 image_035.jpg,1,Asian Glossy Starling,1,104,
 image_036.jpg,1,Black Phoebe,38,-122,
-image_037.jpg,2,Common Hill Myna,1,104,
-image_038.jpg,1,Black Drongo,13,80,
-image_039.jpg,1,Eurasian Kestrel,52,0,
+image_037.jpg,2,Common Hill Myna,1,104,"Common Myna, Javan Myna"
+image_038.jpg,1,Black Drongo,13,80,Greater Racket-tailed Drongo
+image_039.jpg,1,Eurasian Kestrel,52,0,Eurasian Hobby
 image_040.jpg,1,American Coot,38,-121,
 image_041.jpg,1,American Coot,36,-121,
 image_042.jpg,1,American Robin,36,-79,
@@ -45,54 +45,54 @@ image_044.jpg,1,Bewick's Wren,39,-121,
 image_045.jpg,1,Forster's Tern,38,-122,Common Tern
 image_046.jpg,1,Ornate Sunbird,1,104,"Crimson Sunbird, Olive-backed Sunbird"
 image_047.jpg,1,Ornate Sunbird,1,104,"Crimson Sunbird, Olive-backed Sunbird"
-image_048.jpg,1,American Wigeon,38,-122,
-image_049.jpg,2,Asian Openbill / Black-crowned Night Heron,13,80,
+image_048.jpg,1,American Wigeon,38,-122,Eurasian Wigeon
+image_049.jpg,2,Asian Openbill / Black-crowned Night Heron,13,80,"Painted Stork; Indian Pond-Heron, Striated Heron"
 image_050.jpg,1,Anna's Hummingbird,39,-121,"Costa's Hummingbird, Allen's Hummingbird"
 image_051.jpg,1,Pied Imperial Pigeon,1,104,
 image_052.jpg,1,Indian Cormorant,11,77,Little Cormorant
 image_053.jpg,1,Clark's Grebe,38,-122,Western Grebe
-image_054.jpg,1,Caspian Tern,13,80,"Royal Tern, Elegant Tern"
+image_054.jpg,1,Caspian Tern,13,80,"River Tern, Gull-billed Tern"
 image_055.jpg,1,Ornate Sunbird,1,104,"Crimson Sunbird, Olive-backed Sunbird"
-image_056.jpg,3,Gray Heron / Asian Openbill,13,80,Purple Heron
+image_056.jpg,3,Gray Heron / Asian Openbill,13,80,Purple Heron; Painted Stork
 image_057.jpg,1,Asian Green Bee-eater,21,71,Blue-tailed Bee-eater
 image_058.jpg,1,Asian Glossy Starling,1,104,
 image_059.jpg,1,Oriental Magpie-Robin,1,104,
 image_060.jpg,1,Anna's Hummingbird,39,-121,"Costa's Hummingbird, Allen's Hummingbird"
-image_061.jpg,1,Barrow's Goldeneye,38,-122,
-image_062.jpg,1,Black-bellied Plover,38,-122,
+image_061.jpg,1,Barrow's Goldeneye,38,-122,Common Goldeneye
+image_062.jpg,1,Black-bellied Plover,38,-122,Pacific Golden-Plover
 image_063.jpg,1,Acorn Woodpecker,38,-121,
 image_064.jpg,1,Black-naped Oriole,1,104,
 image_065.jpg,2,Black Oystercatcher / Harlequin Duck,38,-122,
-image_066.jpg,3,Grey Heron / Little Cormorant / Great Egret,11,77,Purple Heron; Indian Cormorant
-image_067.jpg,1,Asian Openbill,12,77,
+image_066.jpg,3,Grey Heron / Little Cormorant / Great Egret,11,77,"Purple Heron; Indian Cormorant; Little Egret, Intermediate Egret"
+image_067.jpg,1,Asian Openbill,12,77,Painted Stork
 image_068.jpg,1,Gull-billed Tern,13,80,Whiskered Tern
 image_069.jpg,1,Asian Green Bee-eater,21,71,Blue-tailed Bee-eater
-image_070.jpg,2,Indian Pond-Heron / Little Egret,11,77,"Great Egret, Intermediate Egret"
-image_071.jpg,1,Black-crowned Night Heron,11,77,
+image_070.jpg,2,Indian Pond-Heron / Little Egret,11,77,
+image_071.jpg,1,Black-crowned Night Heron,11,77,"Indian Pond-Heron, Striated Heron"
 image_072.jpg,1,Lineated Barbet,1,104,
 image_073.jpg,1,Pied Imperial Pigeon,1,104,
-image_074.jpg,1,Yellow-crowned Night-Heron,34,-119,
+image_074.jpg,1,Yellow-crowned Night-Heron,34,-119,Black-crowned Night-Heron
 image_075.jpg,1,Javan Myna,1,104,"Common Myna, White-vented Myna"
-image_076.jpg,1,Black-headed Ibis,21,71,
+image_076.jpg,1,Black-headed Ibis,21,71,Glossy Ibis
 image_077.jpg,1,Gull-billed Tern,13,80,Whiskered Tern
 image_078.jpg,1,Allen's Hummingbird,34,-118,"Rufous Hummingbird, Anna's Hummingbird"
-image_079.jpg,2,Common Hill Myna,1,104,
+image_079.jpg,2,Common Hill Myna,1,104,"Common Myna, Javan Myna"
 image_080.jpg,1,Spotted Dove,1,104,
 image_081.jpg,1,Little Egret,21,71,"Great Egret, Intermediate Egret"
 image_082.jpg,3,Black-headed Ibis / Glossy Ibis / Wood Sandpiper,11,77,
 image_083.jpg,1,Asian Green Bee-eater,14,80,Blue-tailed Bee-eater
-image_084.jpg,2,Black Drongo / Common Myna,13,80,"Javan Myna, White-vented Myna"
+image_084.jpg,2,Black Drongo / Common Myna,13,80,"Greater Racket-tailed Drongo; Javan Myna, White-vented Myna"
 image_085.jpg,1,Asian Koel,11,77,
 image_086.jpg,2,Black Oystercatcher,34,-120,
-image_087.jpg,1,Western Sandpiper,38,-122,
+image_087.jpg,1,Western Sandpiper,38,-122,"Least Sandpiper, Semipalmated Sandpiper"
 image_088.jpg,1,Asian Green Bee-eater,14,80,Blue-tailed Bee-eater
 image_089.jpg,1,Island Scrub-Jay,34,-120,California Scrub-Jay
-image_090.jpg,1,American Kestrel,37,-122,
+image_090.jpg,1,American Kestrel,37,-122,Sharp-shinned Hawk
 image_091.jpg,2,Common Shelduck,52,0,
-image_092.jpg,3,Black-headed Ibis / Eastern Cattle-Egret,11,77,Little Egret
+image_092.jpg,3,Black-headed Ibis / Eastern Cattle-Egret,11,77,Glossy Ibis; Little Egret
 image_093.jpg,1,Ornate Sunbird,1,104,"Crimson Sunbird, Olive-backed Sunbird"
 image_094.jpg,1,Brahminy Kite,21,71,
-image_095.jpg,1,Black-crowned Night Heron,13,80,
+image_095.jpg,1,Black-crowned Night Heron,13,80,"Indian Pond-Heron, Striated Heron"
 image_096.jpg,2,Great Egret / Whiskered Tern,13,80,"Little Egret, Intermediate Egret; Gull-billed Tern, White-winged Tern"
 image_097.jpg,2,Asian Openbill / Painted Stork,13,80,
 image_098.jpg,1,Western Gull,37,-122,"California Gull, Herring Gull"
@@ -101,7 +101,7 @@ image_100.jpg,1,Blue-tailed Bee-eater,11,77,"Asian Green Bee-eater, Blue-cheeked
 image_101.jpg,1,Mute Swan,51,0,"Whooper Swan, Bewick's Swan"
 image_102.jpg,1,Eurasian Coot,51,0,
 image_103.jpg,1,Horned Grebe,38,-122,"Eared Grebe, Pied-billed Grebe"
-image_104.jpg,1,White Wagtail,52,0,
+image_104.jpg,1,White Wagtail,52,0,Pied Wagtail
 image_105.jpg,1,Ornate Sunbird,1,104,"Crimson Sunbird, Olive-backed Sunbird"
 image_106.jpg,2,Blue-tailed Bee-eater,11,77,"Asian Green Bee-eater, Blue-cheeked Bee-eater"
 image_107.jpg,1,Little Egret,13,80,"Great Egret, Intermediate Egret"
@@ -110,20 +110,20 @@ image_109.jpg,1,Allen's Hummingbird,34,-118,"Rufous Hummingbird, Anna's Hummingb
 image_110.jpg,1,Asian Koel,11,77,
 image_111.jpg,1,Clark's Grebe,38,-122,Western Grebe
 image_112.jpg,1,Lineated Barbet,1,104,
-image_113.jpg,1,Eurasian Kestrel,51,0,
-image_114.jpg,1,Black Drongo,11,77,
+image_113.jpg,1,Eurasian Kestrel,51,0,Eurasian Hobby
+image_114.jpg,1,Black Drongo,11,77,Greater Racket-tailed Drongo
 image_115.jpg,1,Gull-billed Tern,13,80,Whiskered Tern
-image_116.jpg,1,Barrow's Goldeneye,38,-122,
-image_117.jpg,1,Rose-ringed Parakeet,51,0,
+image_116.jpg,1,Barrow's Goldeneye,38,-122,Common Goldeneye
+image_117.jpg,1,Rose-ringed Parakeet,51,0,Alexandrine Parakeet
 image_118.jpg,2,Black Oystercatcher / Harlequin Duck,38,-122,
-image_119.jpg,2,Asian Openbill / Grey Heron,11,77,Purple Heron
+image_119.jpg,2,Asian Openbill / Grey Heron,11,77,Painted Stork; Purple Heron
 image_120.jpg,1,Mute Swan,1,104,"Whooper Swan, Bewick's Swan"
 image_121.jpg,1,Allen's Hummingbird,34,-118,"Rufous Hummingbird, Anna's Hummingbird"
 image_122.jpg,1,California Gull,38,-122,"Western Gull, Herring Gull, Ring-billed Gull"
 image_123.jpg,1,Green Heron,38,-122,Black-crowned Night-Heron
 image_124.jpg,1,Ash-throated Flycatcher,38,-121,
-image_125.jpg,1,Caspian Tern,13,80,"Royal Tern, Elegant Tern"
-image_126.jpg,1,Greater Racket-tailed Drongo,1,104,
+image_125.jpg,1,Caspian Tern,13,80,"River Tern, Gull-billed Tern"
+image_126.jpg,1,Greater Racket-tailed Drongo,1,104,Black Drongo
 image_127.jpg,1,White-breasted Waterhen,1,104,
 image_128.jpg,1,Indian Cormorant,13,80,Little Cormorant
 image_129.jpg,1,Black Vulture,28,-97,
@@ -133,12 +133,12 @@ image_132.jpg,1,California Scrub-Jay,38,-121,Island Scrub-Jay
 image_133.jpg,1,Little Cormorant,11,77,Indian Cormorant
 image_134.jpg,1,Laughing Gull,28,-97,Franklin's Gull
 image_135.jpg,1,Blue-tailed Bee-eater,11,77,"Asian Green Bee-eater, Blue-cheeked Bee-eater"
-image_136.jpg,1,Great Tit,51,0,
+image_136.jpg,1,Great Tit,51,0,Eurasian Blue Tit
 image_137.jpg,2,Black-winged Stilt,21,70,
-image_138.jpg,2,Common Hill Myna,1,104,
+image_138.jpg,2,Common Hill Myna,1,104,"Common Myna, Javan Myna"
 image_139.jpg,1,European Robin,51,0,
-image_140.jpg,1,Eurasian Blue Tit,51,0,
+image_140.jpg,1,Eurasian Blue Tit,51,0,Great Tit
 image_141.jpg,1,Ornate Sunbird,1,104,"Crimson Sunbird, Olive-backed Sunbird"
 image_142.jpg,1,Red Junglefowl,1,104,
-image_143.jpg,1,Black-bellied Plover,37,-122,
+image_143.jpg,1,Black-bellied Plover,37,-122,Pacific Golden-Plover
 image_144.jpg,1,Whiskered Tern,13,80,"Gull-billed Tern, White-winged Tern"
